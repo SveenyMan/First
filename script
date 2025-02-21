@@ -156,7 +156,16 @@ Anim:AdjustSpeed(0.1)
 Anim.TimePosition = startTime
  
 Anim:AdjustSpeed(0.9)
- 
+
+local part = Instance.new("Part", workspace)
+part.Anchored = true
+part.CanCollide = false
+part.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-3)
+local particle = Instane.new("ParticleEmitter", part)
+particle.Texture = 283011883
+particle.Enabled = false
+particle:Emit(1)
+game.Debris:AddItem(part, 2)
  
     end
  
